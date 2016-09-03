@@ -72,6 +72,14 @@ describe('attack', function(){
     };
   });
 
+  after(function(){
+    console.log('entire test suite completed');
+  });
+
+  afterEach(function(){
+    console.log('one unit test completed');
+  });
+
   it('should attack a ship at a location if present', function(){
     attack(player,[0,0])
     expect(player.ships[0].damage[0]).to.deep.equal([0,0]);

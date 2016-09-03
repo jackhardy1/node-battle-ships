@@ -48,8 +48,9 @@ function checkForDamage(player, coordinates){
   }
 
 
-
-module.exports.checkForShip = checkForShip;
-module.exports.damageShip = damageShip;
-module.exports.attack = attack;
-module.exports.checkForDamage = checkForDamage;
+module.exports = {
+  checkForShip: checkForShip,
+  damageShip: damageShip,
+  attack: attack,
+  checkForDamage: checkForDamage
+}
