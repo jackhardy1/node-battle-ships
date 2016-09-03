@@ -39,5 +39,4 @@ describe('GAME INSTANCE FUNCTIONS', function(){
       expect(actual).to.be.false;
     });
   });
-
 });
