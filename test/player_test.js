@@ -69,6 +69,8 @@ describe('PLAYER METHODS', function () {
   describe('placeShip', function () {
     var placeShip = require('../game_logic/player_methods.js').placeShip;
     var player;
+    var ship;
+    var coordinates;
 
     beforeEach(function () {
       player = {
@@ -83,12 +85,11 @@ describe('PLAYER METHODS', function () {
           }
         ]
       };
+      ship = player.ships[0];
+      coordinates = [0,1];
     });
 
     it('should update a ship with a valid starting location', function () {
-      var ship = player.ships[0];
-      var coordinates = [0, 1];
-
       placeShip(player, ship, coordinates, 'horizontal');
       var actual = ship.locations;
 
@@ -98,11 +99,9 @@ describe('PLAYER METHODS', function () {
     });
 
     it('should throw an error if no direction is specified', function(){
-      var ship = player.ships[0];
-      var coordinates = [0,1];
-
       var handler = function() { placeShip(player,ship,coordinates); };
       expect(handler).to.throw(Error);
+      expect(handler).to.throw('You left out the direction!');
     });
   });
 });
